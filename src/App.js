@@ -7,7 +7,7 @@ class App extends Component {
     
   }
 
-addNewItem = (e) => {
+  addNewItem = (e) => {
    e.preventDefault()
    
    const {buyItems} = this.state;
@@ -18,11 +18,11 @@ addNewItem = (e) => {
      this.addForm.reset()
 }
 
-  render() {
+  render() { 
     const {buyItems} = this.state
     return (
       <div className="App">
-        <h1 className='display-4'>SHOPING CART</h1>
+        <h1 className='text-danger'>SHOPPING CART</h1>
 
         <form onSubmit={this.addNewItem} ref={(input)=>{this.addForm =input}}>
            <div className='form-group'>
