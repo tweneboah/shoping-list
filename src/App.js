@@ -64,13 +64,14 @@ class App extends Component {
       <div className="App">
         <h1 className='text-danger'>SHOPPING CART</h1>
         <h3>Your total items is {buyItems.length}</h3>
+        <hr/>
            {
              message !=='' && this.display()
            }
         <form onSubmit={this.addNewItem} ref={(input)=>{this.addForm =input}}>
            <div className='form-group'>
              <label className='sr-only'>Add New Item</label>
-               <input type='text' placeholder='Bread' id='newItemInput' ref={(input)=>{this.newItem =input}}/>
+               <input type='text' placeholder='Enter item' id='newItemInput' ref={(input)=>{this.newItem =input}}/>
                <button className='btn btn-primary'>Add</button>
            </div>
          
@@ -89,10 +90,10 @@ class App extends Component {
         {
            buyItems.map((item) => {
                   return (
-                    <tr>
-                    <th scope="row">1</th>
+                    <tr key={item}>
+                    <th scope="row">-></th>
                     <td>{item}</td>
-                    <td><button type= 'button' onClick={() => this.removeItem(item)} className='btn btn-default btn-sm'>Remove</button></td>
+                    <td><button type= 'button' onClick={() => this.removeItem(item)} className='btn btn-danger btn-sm'>Remove</button></td>
                   </tr>
                   );
                 })
